@@ -1,0 +1,37 @@
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+htmlcov/
+.coverage
+
+# Environments (never bundled - the marketplace is standard library only)
+.venv/
+venv/
+env/
+
+# Local audit output
+report.json
+snapshot.json
+.audit-snapshot.json
+*.snap.json
+bench.json
+agent-context.json
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Round 4 video materials - not part of the marketplace
+round4/

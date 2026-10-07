@@ -1,0 +1,35 @@
+{
+  "name": "brand-ai-readiness-audit",
+  "version": "1.0.0",
+  "description": "Audit any public website for the defects that stop AI assistants finding, reading and citing it, and that stop visitors engaging once they arrive. Read-only; emits one evidence-backed, prioritised audit report.",
+  "license": "Apache-2.0",
+  "entrypoint": "audit-orchestrator",
+  "skills": [
+    {
+      "id": "audit-orchestrator",
+      "path": "skills/audit-orchestrator",
+      "entrypoint": true,
+      "summary": "Receives the audit request, performs the single bounded crawl, invokes the analyzer skills over the shared snapshot, de-duplicates and grades their findings, and emits the one final report."
+    },
+    {
+      "id": "crawl-render-audit",
+      "path": "skills/crawl-render-audit",
+      "summary": "Machine access and machine readability: was the crawler let in, and could it read the page from the server response alone?"
+    },
+    {
+      "id": "ai-citability-audit",
+      "path": "skills/ai-citability-audit",
+      "summary": "Fact extraction and entity clarity: can a machine pull a specific fact off the page and attribute it to the right brand?"
+    },
+    {
+      "id": "freshness-corroboration",
+      "path": "skills/freshness-corroboration",
+      "summary": "Currency, self-consistency and corroboration: are the facts dated, do they agree with each other, and does anything outside the site confirm them?"
+    },
+    {
+      "id": "engagement-audit",
+      "path": "skills/engagement-audit",
+      "summary": "Visitor experience: can someone landing from a search result or a citation orient, find the next action, and keep moving without dead ends?"
+    }
+  ]
+}
